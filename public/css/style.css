@@ -18,7 +18,7 @@
   height: 100%;
   position: absolute;
   cursor: pointer;
-  background-color: #ccc;
+  background-color: #050f11;
 }
 .picture img {
   z-index: 1;
@@ -74,3 +74,22 @@
       opacity: 0;
   }
 }
+
+/* Guro CSS edits */
+
+body{
+  background: linear-gradient( -40deg , #37604d, #1f4232, #0e3127, #050f11);
+}
+
+h1, h2{
+  font-family:'Courier New', Courier, monospace;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+}
+
+.picture label:hover {
+  background-color: #37604d;
+}
+
+
