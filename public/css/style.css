@@ -1,26 +1,37 @@
-.pictures {
+:root{
+  --black: #050f11;
+  --light-green: #37604d;
+  --green: #1f4232;
+  --dark-green: #0e3127;
+}
+
+
+
+.container {
   display: flex;
   flex-wrap: wrap;
   width: 50%;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 }
-.picture {
+
+.container__image {
   width: 25%;
   height: 0;
   padding-bottom: 25%;
-  position: relative;
+  position: relative; 
 }
-.picture input[type="checkbox"] {
-  display: none;
-}
-.picture label {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  cursor: pointer;
-  background-color: #050f11;
-}
-.picture img {
+
+.container__image label{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    background-color: var(--black);
+  }
+
+.container__image img {
   z-index: 1;
   display: none;
   width: 100%;
@@ -30,24 +41,23 @@
   transition: opacity 0.5s;
   object-fit: cover;
 }
-.picture input[type="checkbox"]:checked ~ label {
-  display: none;
-}
-.picture input[type="checkbox"]:checked ~ img {
-  display: block;
-  opacity: 1;
-  animation: fadeOut 3s forwards;
-}
-.pictures {
-  display: flex;
-  flex-wrap: wrap;
-  width: 50%;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
+
+.container__image input[type="checkbox"]:checked ~ img {
+    display: block;
+    opacity: 1;
+    animation: fadeOut 3s forwards;
 }
 
-.snake {
+.container__image input[type="checkbox"]:checked ~ label {
+    display: none;
+}
+
+.container__image input[type="checkbox"] {
+    display: none;  
+}
+
+
+.container__image__snake {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -55,10 +65,11 @@
   left: 0;
   z-index: -1;
 }
-.snake img {
-  width: 100%;
-  height: auto;
+.container__image__snake img {
+    width: 100%;
+    height: auto;
 }
+
 
 .image {
   z-index: -1;
@@ -78,7 +89,7 @@
 /* Guro CSS edits */
 
 body{
-  background: linear-gradient( -40deg , #37604d, #1f4232, #0e3127, #050f11);
+  background: linear-gradient( -40deg , var(--light-green), var(--green), var(--dark-green), var(--black));
 }
 
 h1, h2{
@@ -88,8 +99,6 @@ h1, h2{
   justify-content: center;
 }
 
-.picture label:hover {
-  background-color: #37604d;
+.container__image label:hover {
+  background-color: var(--light-green);
 }
-
-
